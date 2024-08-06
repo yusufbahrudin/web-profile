@@ -2,8 +2,11 @@ import React, { useRef, useState, useEffect } from "react";
 import { servicesData } from "../../Data/data";
 import * as Unicons from "@iconscout/react-unicons";
 
+// Interface for Service, updated to match servicesData structure
 interface Service {
-  image: string;
+  title: string;
+  desc: string;
+  Icon: React.ComponentType; // Update to use React.ComponentType for the icon
 }
 
 const Voucher: React.FC = () => {
@@ -58,7 +61,9 @@ const Voucher: React.FC = () => {
               )
             }
           >
-            <Unicons.UilArrowLeft className="w-6 h-6" />
+            <div className="w-6 h-6">
+              <Unicons.UilArrowLeft />
+            </div>
           </button>
           <div
             className="flex overflow-x-auto scrollbar-hide"
@@ -66,22 +71,23 @@ const Voucher: React.FC = () => {
             style={{ scrollSnapType: "x mandatory" }}
           >
             <div className="flex" style={{ width: `${totalPages * 100}%` }}>
-              {servicesData.map((item: Service, index: number) => {
-                return (
-                  <div
-                    key={index}
-                    className="flex-shrink-0 w-1/3 p-4 sm:p-12 mx-2 shadow-lg rounded-2xl bg-white dark:bg-slate-900 border border-gray-300"
-                    style={{ scrollSnapAlign: "start" }}
-                  >
-                    <div className="flex justify-center mb-4">
-                      <img
-                        src={item.image}
-                        className="w-full h-auto rounded-md"
-                      />
+              {servicesData.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex-shrink-0 w-1/3 p-4 sm:p-12 mx-2 shadow-lg rounded-2xl bg-white dark:bg-slate-900 border border-gray-300"
+                  style={{ scrollSnapAlign: "start" }}
+                >
+                  <div className="flex justify-center mb-4">
+                    <div className="w-12 h-12">
+                      <item.Icon />
                     </div>
                   </div>
-                );
-              })}
+                  <h3 className="text-lg font-semibold text-gray-700 mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-500">{item.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
           <button
@@ -90,7 +96,9 @@ const Voucher: React.FC = () => {
               setCurrentPage((prevPage) => (prevPage + 1) % totalPages)
             }
           >
-            <Unicons.UilArrowRight className="w-6 h-6" />
+            <div className="w-6 h-6">
+              <Unicons.UilArrowRight />
+            </div>
           </button>
         </div>
         <div className="flex justify-center mt-4">

@@ -5,13 +5,15 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import "tiny-slider/dist/tiny-slider.css";
 import { review } from "../../Data/data";
-import { TinySliderProps } from "tiny-slider-react";
+import { TinySlider as TinySliderType } from "tiny-slider-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
 
-const TinySlider = dynamic(() => import("tiny-slider-react"), { ssr: false });
+const TinySlider = dynamic(() => import("tiny-slider-react"), {
+  ssr: false,
+}) as React.ComponentType<TinySliderType>;
 
-const settings: Partial<TinySliderProps> = {
+const settings: Partial<TinySliderType> = {
   lazyload: true,
   controls: false,
   mouseDrag: true,

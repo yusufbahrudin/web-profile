@@ -2,7 +2,7 @@ import * as Icon from "react-feather";
 
 interface Expertise {
   title: string;
-  Icon: React.ComponentType;
+  Icon: React.ComponentType<any>;
 }
 
 interface Service {
