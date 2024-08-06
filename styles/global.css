@@ -1,0 +1,8 @@
+/* styles/globals.css */
+/* style.global.css */
+
+/* Tulis gaya tambahan Anda di sini */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
