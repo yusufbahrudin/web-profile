@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { FiPlay } from "react-icons/fi";
 
 interface HeroOneProps {}
@@ -59,7 +59,7 @@ const HeroOne: React.FC<HeroOneProps> = () => {
               alt=""
               layout="responsive"
               width={600}
-              height={10}
+              height={500}
             />
           </div>
         </div>
