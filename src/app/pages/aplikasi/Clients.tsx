@@ -58,7 +58,7 @@ export default function Clients() {
             Tanggapan klien kami sangat positif—mereka merasa aplikasi kami
             sangat memudahkan mereka dalam meningkatkan kesejahteraan mental dan
             memberikan dukungan yang berharga dalam perjalanan kesehatan mental
-            mereka.
+            mereka
           </p>
         </div>
         <div className="relative grid grid-cols-1 mt-8">
