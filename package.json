@@ -1,7 +1,6 @@
 {
-  "name": "dennis",
   "version": "1.0.0",
-  "description": "Next Js Personal Portfolio Template",
+  "description": "DeepTalk, Aplikasi Konseling dan Screening",
   "private": true,
   "scripts": {
     "dev": "next dev",

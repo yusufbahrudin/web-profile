@@ -9,8 +9,8 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Dennis - Next Js Personal Portfolio Template",
-  description: "Dennis - Next Js Personal Portfolio Template",
+  title: "DeepTalk Indonesia - Aplikasi Konseling dan Screening",
+  description: "Aplikasi Konseling dan Screening, DeepTalk Indonesia",
 };
 
 interface RootLayoutProps {
@@ -20,6 +20,9 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/icon.png" />
+      </head>
       <body
         className={`${poppins.variable} font-poppins text-base text-black dark:text-white dark:bg-slate-900 `}
       >
