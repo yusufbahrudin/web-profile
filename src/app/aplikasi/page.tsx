@@ -9,7 +9,7 @@ const Footer = dynamic(() => import("../pages/Footer"));
 const HeroTwo = dynamic(() => import("../pages/aplikasi/HeroTwo"));
 const HeroThree = dynamic(() => import("../pages/aplikasi/HeroThree"));
 const HeroFour = dynamic(() => import("../pages/aplikasi/HeroFour"));
-const ClientReview = dynamic(() => import("../pages/aplikasi/Clients"));
+// const ClientReview = dynamic(() => import("../pages/aplikasi/Clients"));
 const HeroFive = dynamic(() => import("../pages/aplikasi/HeroFive"));
 
 export default function AplikasiPage() {
@@ -28,7 +28,7 @@ export default function AplikasiPage() {
       <HeroThree />
       <HeroFour />
       <HeroFive />
-      <ClientReview />
+      {/* <ClientReview /> */}
       <Footer />
     </>
   );

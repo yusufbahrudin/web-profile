@@ -88,8 +88,8 @@ const HeroFive: React.FC<HeroFiveProps> = () => {
             <Image
               src="/images/aplikasi/bg5.png"
               alt="Ilustrasi"
-              layout="fill"
-              objectFit="cover"
+              fill
+              style={{ objectFit: "cover" }}
               className="absolute inset-0 -top-16"
             />
           </div>

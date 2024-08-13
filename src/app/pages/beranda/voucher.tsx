@@ -1,20 +1,51 @@
 import React, { useRef, useState, useEffect } from "react";
-import { servicesData } from "../../Data/data";
-import * as Unicons from "@iconscout/react-unicons";
+import axios from "axios";
 
-// Interface for Service, updated to match servicesData structure
-interface Service {
-  title: string;
-  desc: string;
-  Icon: React.ComponentType; // Update to use React.ComponentType for the icon
+// Interface for Voucher, updated to match API structure
+interface VoucherData {
+  id: number;
+  description: string;
+  image: string | null;
+  amount: string;
+  discount_type: string;
+  expiry_date: string;
+  user_type: string;
+  max_discount: string;
+  min_purchase: string;
+  terms_conditions: string;
+  for: string;
+  created_at: string;
+  updated_at: string;
+  usage_limit: string | null;
+  claim_type: string;
+  usage_count: number;
+  code: string;
 }
 
 const Voucher: React.FC = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [currentPage, setCurrentPage] = useState<number>(0);
+  const [vouchers, setVouchers] = useState<VoucherData[]>([]);
   const itemsPerPage = 3;
 
-  const totalPages = Math.ceil(servicesData.length / itemsPerPage);
+  useEffect(() => {
+    // Fetch data from the API
+    const fetchVouchers = async () => {
+      try {
+        const response = await axios.get(
+          `${process.env.REACT_APP_API_URL}/user/voucher`
+        );
+        console.log("API Response:", response.data.data);
+        setVouchers(response.data.data);
+      } catch (error) {
+        console.error("Failed to fetch vouchers:", error);
+      }
+    };
+
+    fetchVouchers();
+  }, []);
+
+  const totalPages = Math.ceil(vouchers.length / itemsPerPage);
 
   const scrollToPage = (page: number) => {
     if (scrollContainerRef.current) {
@@ -61,9 +92,7 @@ const Voucher: React.FC = () => {
               )
             }
           >
-            <div className="w-6 h-6">
-              <Unicons.UilArrowLeft />
-            </div>
+            &lt;
           </button>
           <div
             className="flex overflow-x-auto scrollbar-hide"
@@ -71,21 +100,29 @@ const Voucher: React.FC = () => {
             style={{ scrollSnapType: "x mandatory" }}
           >
             <div className="flex" style={{ width: `${totalPages * 100}%` }}>
-              {servicesData.map((item, index) => (
+              {vouchers.map((item) => (
                 <div
-                  key={index}
+                  key={item.id}
                   className="flex-shrink-0 w-1/3 p-4 sm:p-12 mx-2 shadow-lg rounded-2xl bg-white dark:bg-slate-900 border border-gray-300"
                   style={{ scrollSnapAlign: "start" }}
                 >
                   <div className="flex justify-center mb-4">
-                    <div className="w-12 h-12">
-                      <item.Icon />
-                    </div>
+                    <img
+                      src={
+                        item.image
+                          ? `${process.env.REACT_APP_API_URL}${item.image}`
+                          : "/default-image.jpg"
+                      }
+                      alt={item.description}
+                      className="w-12 h-12"
+                    />
                   </div>
                   <h3 className="text-lg font-semibold text-gray-700 mb-2">
-                    {item.title}
+                    {item.description}
                   </h3>
-                  <p className="text-gray-500">{item.desc}</p>
+                  <p className="text-gray-500">
+                    {item.amount} {item.discount_type}
+                  </p>
                 </div>
               ))}
             </div>
@@ -96,9 +133,7 @@ const Voucher: React.FC = () => {
               setCurrentPage((prevPage) => (prevPage + 1) % totalPages)
             }
           >
-            <div className="w-6 h-6">
-              <Unicons.UilArrowRight />
-            </div>
+            &gt;
           </button>
         </div>
         <div className="flex justify-center mt-4">

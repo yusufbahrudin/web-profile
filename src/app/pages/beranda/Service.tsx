@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { servicesData } from "../../Data/data";
-import * as Unicons from "@iconscout/react-unicons";
 
 interface Service {
   Icon: React.ComponentType<any>;

@@ -8,7 +8,7 @@ interface HeroOneProps {}
 
 const HeroOne: React.FC<HeroOneProps> = () => {
   return (
-    <section className="relative pt-20 pb-20" id="home">
+    <section className="relative pt-8 pb-20" id="home">
       <div className="absolute inset-0" id="overlay"></div>
       <div className="container">
         <div className="grid md:grid-cols-2 grid-cols-1 items-center gap-[30px]">
@@ -17,15 +17,19 @@ const HeroOne: React.FC<HeroOneProps> = () => {
               Aplikasi Konsultasi Psikologi Online Berbasis Android & iOS <br />
               <TypeAnimation
                 sequence={[
-                  "Layanan Konseling Umum",
+                  "Layanan Konseling",
                   1000,
-                  "Layanan Assessmen",
+                  "Layanan Tes Psikologi",
                   1000,
                   "Layanan Psikoterapi",
+                  1000,
+                  "Screening Kesehatan Mental",
                   1000,
                   "Layanan Tumbuh Kembang Anak",
                   1000,
                   "Layanan Psikoedukasi",
+                  1000,
+                  "Webinar",
                   1000,
                 ]}
                 wrapper="span"
@@ -54,13 +58,7 @@ const HeroOne: React.FC<HeroOneProps> = () => {
           </div>
 
           <div className="relative">
-            <Image
-              src="/images/hero/bg.png"
-              alt=""
-              layout="responsive"
-              width={600}
-              height={10}
-            />
+            <Image src="/images/hero/bg.png" alt="" width={600} height={10} />
           </div>
         </div>
       </div>
