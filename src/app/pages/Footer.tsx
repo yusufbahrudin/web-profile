@@ -64,7 +64,12 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link href="/assessment" className="hover:text-gray-400">
-                    Assessment
+                    Tes Psikologi
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/psikoedukasi" className="hover:text-gray-400">
+                    Psikoterapi
                   </Link>
                 </li>
                 <li>

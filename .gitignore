@@ -1,5 +1,6 @@
 # Node modules
 node_modules/
+.env
 
 # Build output
 .next/
@@ -26,3 +27,4 @@ public/
 # Others
 *.swp
 *.swo
+yarn.lock

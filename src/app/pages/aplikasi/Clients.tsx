@@ -2,34 +2,36 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import dynamic from "next/dynamic";
-import "tiny-slider/dist/tiny-slider.css";
 import { review } from "../../Data/data";
-import { TinySlider as TinySliderType } from "tiny-slider-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
 
-const TinySlider = dynamic(() => import("tiny-slider-react"), {
-  ssr: false,
-}) as React.ComponentType<TinySliderType>;
+import TinySlider from "tiny-slider-react";
+import "tiny-slider/dist/tiny-slider.css";
 
-const settings: Partial<TinySliderType> = {
+const settings = {
   lazyload: true,
-  controls: false,
+  controls: true,
   mouseDrag: true,
   loop: true,
   rewind: true,
-  autoplay: true,
+  autoplay: false,
   autoplayButtonOutput: false,
-  autoplayTimeout: 3000,
-  navPosition: "bottom",
+  nav: false,
   speed: 400,
-  gutter: 12,
+  gutter: 20,
+  items: 6,
   responsive: {
+    1200: {
+      items: 6,
+    },
     992: {
-      items: 3,
+      items: 4,
     },
     767: {
+      items: 3,
+    },
+    576: {
       items: 2,
     },
     320: {
@@ -58,13 +60,13 @@ export default function Clients() {
             Tanggapan klien kami sangat positif—mereka merasa aplikasi kami
             sangat memudahkan mereka dalam meningkatkan kesejahteraan mental dan
             memberikan dukungan yang berharga dalam perjalanan kesehatan mental
-            mereka.
+            mereka
           </p>
         </div>
-        <div className="relative grid grid-cols-1 mt-8">
+        <div className="relative mt-8">
           <TinySlider settings={settings}>
             {review.map((item: ReviewItem, index: number) => (
-              <div className="tiny-slide" key={index}>
+              <div className="tiny-slide p-2" key={index}>
                 <div className="customer-testi border border-gray-300 dark:border-gray-700 rounded shadow shadow-gray-200 dark:shadow-gray-800 p-6 bg-white dark:bg-slate-900">
                   <div className="content mb-6">
                     <i className="mdi mdi-format-quote-open mdi-48px text-amber-500"></i>
