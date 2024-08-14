@@ -44,36 +44,6 @@ export const expertiseData: ExpertiseItem[] = [
 export default function AboutUs() {
   return (
     <>
-      {/* First Section */}
-      <section className="relative md:py-24 py-16" id="about-first">
-        <div className="container">
-          <div className="grid lg:grid-cols-12 md:grid-cols-2 grid-cols-1 items-center gap-[30px]">
-            <div className="lg:col-span-7">
-              <div className="mb-8 text-center lg:text-left">
-                <h3 className="mb-6 md:text-2xl text-xl md:leading-normal text-gray-700 leading-normal font-semibold">
-                  Jelajahi{" "}
-                  <span className="text-blue-500">
-                    Perjalanan Kesehatan Mental
-                  </span>{" "}
-                  Anda dengan Panduan dan Dukungan dari
-                  <span className="text-blue-500"> DeepTalk</span>
-                </h3>
-              </div>
-            </div>
-            <div className="lg:col-span-5 lg:px-2">
-              <div className="relative w-[60vh] h-[50vh]">
-                <Image
-                  src="/images/beranda/screening.png"
-                  alt="About Image"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="relative md:py-24 py-16" id="about-second">
         <div className="container">
           <div className="grid lg:grid-cols-12 md:grid-cols-2 grid-cols-1 items-center gap-[30px]">

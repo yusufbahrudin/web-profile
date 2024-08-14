@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { FiPlay } from "react-icons/fi";
 
 interface HeroOneProps {}
@@ -58,7 +58,12 @@ const HeroOne: React.FC<HeroOneProps> = () => {
           </div>
 
           <div className="relative">
-            <Image src="/images/hero/bg.png" alt="" width={600} height={10} />
+            <Image
+              src="/images/beranda/bg.png"
+              alt=""
+              width={600}
+              height={10}
+            />
           </div>
         </div>
       </div>
