@@ -27,3 +27,4 @@ public/
 # Others
 *.swp
 *.swo
+yarn.lock
