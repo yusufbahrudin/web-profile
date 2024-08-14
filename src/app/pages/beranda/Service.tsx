@@ -21,22 +21,22 @@ const Services: React.FC = () => {
           "Layanan konseling umum kami menyediakan dukungan dan panduan untuk membantu Anda mengatasi berbagai tantangan dalam kehidupan sehari-hari.",
       },
       psikotest: {
-        image: "/images/beranda/psikotest.png",
+        image: "/images/hero/psikotest.png",
         description:
           "Layanan asesmen kami menawarkan evaluasi yang mendalam untuk memahami kondisi kesehatan mental Anda secara komprehensif.",
       },
       psikoterapi: {
-        image: "/images/beranda/coomingsoon.png",
+        image: "/images/hero/coomingsoon.png",
         description:
           "Psikoterapi kami memberikan pendekatan terapeutik yang terarah untuk membantu Anda dalam proses pemulihan mental.",
       },
       klinik: {
-        image: "/images/beranda/coomingsoon.png",
+        image: "/images/hero/coomingsoon.png",
         description:
           "Klinik tumbuh kembang kami berfokus pada dukungan perkembangan anak dengan pendekatan yang komprehensif dan holistik.",
       },
       screening: {
-        image: "/images/beranda/screening.png",
+        image: "/images/hero/screening.png",
         description:
           "Layanan screening kesehatan mental kami membantu Anda untuk mengenali tanda-tanda awal gangguan mental dan memberikan langkah-langkah preventif.",
       },
