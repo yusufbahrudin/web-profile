@@ -51,7 +51,7 @@ export default function AboutUs() {
               <div className="relative w-full h-[50vh]">
                 <Image
                   src="/images/beranda/about.png"
-                  alt="About Imagee"
+                  alt="About Image"
                   fill
                   className="object-cover"
                 />
