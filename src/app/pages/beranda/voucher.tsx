@@ -33,11 +33,7 @@ const Voucher: React.FC = () => {
     const fetchVouchers = async () => {
       try {
         const response = await axios.get(
-<<<<<<< HEAD
-          `${process.env.REACT_APP_API_URL}/user/voucher`
-=======
           `https://api-dev.deeptalk.co.id/user/voucher`
->>>>>>> v
         );
         console.log("API Response:", response.data.data);
         setVouchers(response.data.data);
