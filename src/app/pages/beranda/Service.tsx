@@ -16,7 +16,7 @@ const Services: React.FC = () => {
   const contentMap: { [key: string]: { image: string; description: string } } =
     {
       konseling: {
-        image: "/images/beranda/konseling.png",
+        image: "/images/hero/konseling.png",
         description:
           "Layanan konseling umum kami menyediakan dukungan dan panduan untuk membantu Anda mengatasi berbagai tantangan dalam kehidupan sehari-hari.",
       },

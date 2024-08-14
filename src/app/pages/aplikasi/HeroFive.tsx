@@ -75,14 +75,6 @@ const HeroFive: React.FC<HeroFiveProps> = () => {
               #Jangan Tunggu Lagi, Dapatkan Kesehatan Mental Optimal dengan
               DeepTalk – Konseling dan Screening dalam Genggaman!
             </h3>
-            <a
-              href="https://play.google.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block mt-4 px-6 py-3 text-white bg-blue-500 hover:bg-blue-600 rounded-full shadow-lg text-center"
-            >
-              Coba Aplikasi
-            </a>
           </div>
           <div className="relative w-full md:w-1/2 h-[400px]">
             <Image

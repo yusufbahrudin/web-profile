@@ -33,7 +33,7 @@ const Voucher: React.FC = () => {
     const fetchVouchers = async () => {
       try {
         const response = await axios.get(
-          `https://api-dev.deeptalk.co.id/user/voucher`
+          `${process.env.NEXT_APP_API_URL}/user/voucher`
         );
         console.log("API Response:", response.data.data);
         setVouchers(response.data.data);
@@ -110,19 +110,12 @@ const Voucher: React.FC = () => {
                     <img
                       src={
                         item.image
-                          ? `${process.env.REACT_APP_API_URL}${item.image}`
+                          ? `${process.env.NEXT_APP_API_URL}${item.image}`
                           : "/default-image.jpg"
                       }
-                      alt={item.description}
                       className="w-12 h-12"
                     />
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-700 mb-2">
-                    {item.description}
-                  </h3>
-                  <p className="text-gray-500">
-                    {item.amount} {item.discount_type}
-                  </p>
                 </div>
               ))}
             </div>

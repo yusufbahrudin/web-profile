@@ -50,7 +50,7 @@ export default function AboutUs() {
             <div className="lg:col-span-5 lg:px-2">
               <div className="relative w-full h-[50vh]">
                 <Image
-                  src="/images/beranda/about.png"
+                  src="/images/hero/aboout.png"
                   alt="About Image"
                   fill
                   className="object-cover"

@@ -48,7 +48,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/complaints" className="hover:text-gray-400">
+                  <Link href="/contact" className="hover:text-gray-400">
                     Layanan Pengaduan Konsumen
                   </Link>
                 </li>
@@ -75,6 +75,11 @@ const Footer = () => {
                 <li>
                   <Link href="/psikoedukasi" className="hover:text-gray-400">
                     Psikoedukasi
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/webinar" className="hover:text-gray-400">
+                    Screening Kesehatan Mental
                   </Link>
                 </li>
                 <li>

@@ -2,9 +2,9 @@ import React from "react";
 import Image from "next/image";
 import { FaEnvelope, FaPhone } from "react-icons/fa";
 
-interface HeroOneProps {}
+interface ContactProps {}
 
-const HeroOne: React.FC<HeroOneProps> = () => {
+const Contact: React.FC<ContactProps> = () => {
   return (
     <>
       <section className="relative bg-blue-100" id="contact">
@@ -76,7 +76,12 @@ const HeroOne: React.FC<HeroOneProps> = () => {
                 <h3 className="text-md font-semibold text-gray-800 mb-1">
                   Email
                 </h3>
-                <p className="text-gray-600 text-xl">help@DeepTalk.co.id</p>
+                <a
+                  href="mailto:help@DeepTalk.co.id"
+                  className="text-gray-600 text-xl"
+                >
+                  help@DeepTalk.co.id
+                </a>
               </div>
             </div>
             <div className="max-w-md w-full flex items-start space-x-3 text-left p-3 mx-auto">
@@ -87,7 +92,12 @@ const HeroOne: React.FC<HeroOneProps> = () => {
                 <h3 className="text-md font-semibold text-gray-800 mb-1">
                   Whatsapp
                 </h3>
-                <p className="text-gray-600 text-xl">[+62] 811-1814-456</p>
+                <a
+                  href="https://wa.me/628111814456"
+                  className="text-gray-600 text-xl"
+                >
+                  [+62] 811-1814-456
+                </a>
               </div>
             </div>
           </div>
@@ -112,12 +122,18 @@ const HeroOne: React.FC<HeroOneProps> = () => {
               </p>
             </div>
             <div className="lg:col-span-7 relative w-[600px] h-[300px]">
-              <Image
-                src="/images/contact/maps.png"
-                alt="Background Image"
-                fill
-                className="object-cover"
-              />
+              <a
+                href="https://maps.app.goo.gl/LNzD9gw9bXTgt2BY7"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src="/images/contact/maps.png"
+                  alt="Background Image"
+                  fill
+                  className="object-cover"
+                />
+              </a>
             </div>
           </div>
         </div>
@@ -126,4 +142,4 @@ const HeroOne: React.FC<HeroOneProps> = () => {
   );
 };
 
-export default HeroOne;
+export default Contact;
