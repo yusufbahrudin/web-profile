@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import axios from "axios";
 
-// Interface for Voucher, updated to match API structure
 interface VoucherData {
   id: number;
   description: string;
@@ -10,7 +9,7 @@ interface VoucherData {
   discount_type: string;
   expiry_date: string;
   user_type: string;
-  max_discount: string;
+  max_discount: string | null;
   min_purchase: string;
   terms_conditions: string;
   for: string;
@@ -29,10 +28,8 @@ const Voucher: React.FC = () => {
   const itemsPerPage = 3;
 
   useEffect(() => {
-    // Fetch data from the API
     const fetchVouchers = async () => {
       try {
-        // Ensure the API URL is defined
         const apiUrl = process.env.NEXT_PUBLIC_API_URL;
         if (!apiUrl) {
           console.error("NEXT_PUBLIC_API_URL is not defined");
@@ -104,26 +101,19 @@ const Voucher: React.FC = () => {
             ref={scrollContainerRef}
             style={{ scrollSnapType: "x mandatory" }}
           >
-            <div className="flex" style={{ width: `${totalPages * 100}%` }}>
-              {vouchers.map((item) => (
-                <div
+            {vouchers.map((item) => {
+              const imageUrl = item.image || "/default-image.jpg";
+              console.log("Image URL:", imageUrl);
+              return (
+                <img
                   key={item.id}
-                  className="flex-shrink-0 w-1/3 p-4 sm:p-12 mx-2 shadow-lg rounded-2xl bg-white dark:bg-slate-900 border border-gray-300"
+                  src={imageUrl}
+                  alt={`Voucher ${item.id}`}
+                  className="flex-shrink-0 w-1/3 h-auto object-contain mx-2"
                   style={{ scrollSnapAlign: "start" }}
-                >
-                  <div className="flex justify-center mb-4">
-                    <img
-                      src={
-                        item.image
-                          ? `${process.env.NEXT_PUBLIC_API_URL}${item.image}`
-                          : "/default-image.jpg"
-                      }
-                      className="w-full h-full"
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
+                />
+              );
+            })}
           </div>
           <button
             className="absolute right-0 z-10 p-2 bg-gray-800 text-white rounded-full hidden md:block"

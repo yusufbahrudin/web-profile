@@ -50,10 +50,10 @@ const Services: React.FC = () => {
     >
       <div className="container">
         <div className="text-center">
-          <h3 className="mt-0 mb-2 md:text-3xl text-2xl font-bold">
+          <h3 className="mt-0 mb-6 md:text-3xl text-2xl font-semibold">
             Layanan Utama Kami
           </h3>
-          <p className="text-gray-500 mb-6 mx-auto text-[17px] mb-8">
+          <p className="text-slate-400 mb-6 max-w-xl mx-auto text-[15px]">
             Temukan pengalaman baru dengan layanan kami yang menghadirkan solusi
             terbaik untuk kebutuhan kesehatan mental anda.
           </p>
@@ -86,14 +86,14 @@ const Services: React.FC = () => {
               <div
                 className={`relative ${
                   selectedCategory === "screening"
-                    ? "w-[55vh] h-[45vh]"
-                    : "w-[45vh] h-[45vh]"
+                    ? "w-[60vh] h-[40vh]"
+                    : "w-[50vh] h-[50vh]"
                 }`}
               >
                 <Image
                   src={selectedContent.image}
                   alt="Service Image"
-                  layout="fill"
+                  fill
                   objectFit="cover"
                   className="rounded-lg"
                 />

@@ -22,6 +22,7 @@ interface Blog {
   image: string;
   title: string;
   desc: string;
+  category: string;
 }
 
 interface Review {
@@ -132,48 +133,56 @@ export const blogData: Blog[] = [
     image: "/images/blog/01_giglink.jpg",
     title: "Giglink: Tailwind CSS NFT Marketplace Template",
     desc: "The phrasal sequence of the is now so that many campaign and benefit",
+    category: "tech",
   },
   {
     id: 2,
     image: "/images/blog/01_techwind.jpg",
     title: "Techwind: Tailwind CSS Multipurpose Template",
     desc: "The phrasal sequence of the is now so that many campaign and benefit",
+    category: "tech",
   },
   {
     id: 3,
     image: "/images/blog/01_upwind.jpg",
     title: "Upwind: Tailwind CSS Landing Page Template",
     desc: "The phrasal sequence of the is now so that many campaign and benefit",
+    category: "tech",
   },
   {
     id: 4,
     image: "/images/blog/01_upwind.jpg",
     title: "Upwind: Tailwind CSS Landing Page Template",
     desc: "The phrasal sequence of the is now so that many campaign and benefit",
+    category: "tech",
   },
   {
     id: 5,
     image: "/images/blog/01_giglink.jpg",
     title: "Giglink: Tailwind CSS NFT Marketplace Template",
     desc: "The phrasal sequence of the is now so that many campaign and benefit",
+    category: "tech",
   },
   {
     id: 6,
     image: "/images/blog/01_techwind.jpg",
     title: "Techwind: Tailwind CSS Multipurpose Template",
     desc: "The phrasal sequence of the is now so that many campaign and benefit",
+    category: "tech",
   },
   {
     id: 7,
     image: "/images/blog/01_upwind.jpg",
     title: "Upwind: Tailwind CSS Landing Page Template",
     desc: "The phrasal sequence of the is now so that many campaign and benefit",
+    category: "tech",
   },
   {
     id: 8,
     image: "/",
     title: "Upwind: Tailwind CSS Landing Page Template",
     desc: "The phrasal sequence of the is now so that many campaign and benefit",
+    category: "tech",
   },
 ];
 

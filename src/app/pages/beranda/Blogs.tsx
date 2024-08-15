@@ -1,4 +1,3 @@
-"use client";
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -67,8 +66,8 @@ export default function Blogs() {
               <Image
                 src={item.image}
                 alt={item.title}
-                height={0}
-                width={0}
+                width={500}
+                height={300}
                 sizes="100vw"
                 style={{ height: "auto", width: "100%" }}
               />
