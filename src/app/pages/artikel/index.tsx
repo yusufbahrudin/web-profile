@@ -78,7 +78,7 @@ export default function Blogs() {
         >
           {paginatedBlogs.map((item: BlogItem) => (
             <Link
-              href={`/artikel/blog/${item.id}`} // Pastikan ID digunakan di URL
+              href="/"
               key={item.id}
               className="relative block rounded-lg overflow-hidden bg-white dark:bg-slate-900 shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl hover:border-2 hover:border-blue-500"
             >
