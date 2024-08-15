@@ -15,7 +15,7 @@ export default function Blogs() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
 
   const filterCategories = [
-    { name: "All", value: "all" },
+    { name: "All,", value: "all" },
     { name: "Technology", value: "tech" },
     { name: "Health", value: "health" },
     { name: "Lifestyle", value: "lifestyle" },
