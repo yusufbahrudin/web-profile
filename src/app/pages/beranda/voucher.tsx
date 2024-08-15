@@ -32,9 +32,14 @@ const Voucher: React.FC = () => {
     // Fetch data from the API
     const fetchVouchers = async () => {
       try {
-        const response = await axios.get(
-          `${process.env.NEXT_APP_API_URL}/user/voucher`
-        );
+        // Ensure the API URL is defined
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+        if (!apiUrl) {
+          console.error("NEXT_PUBLIC_API_URL is not defined");
+          return;
+        }
+
+        const response = await axios.get(`${apiUrl}/user/voucher`);
         console.log("API Response:", response.data.data);
         setVouchers(response.data.data);
       } catch (error) {
@@ -110,10 +115,10 @@ const Voucher: React.FC = () => {
                     <img
                       src={
                         item.image
-                          ? `${process.env.NEXT_APP_API_URL}${item.image}`
+                          ? `${process.env.NEXT_PUBLIC_API_URL}${item.image}`
                           : "/default-image.jpg"
                       }
-                      className="w-12 h-12"
+                      className="w-full h-full"
                     />
                   </div>
                 </div>

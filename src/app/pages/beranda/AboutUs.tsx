@@ -59,7 +59,7 @@ export default function AboutUs() {
             </div>
             <div className="lg:col-span-7">
               <div className="mb-8 text-center lg:text-left">
-                <h3 className="mb-6 md:text-2xl text-xl md:leading-normal text-gray-700 leading-normal font-semibold">
+                <h3 className="mb-6 md:text-2xl text-xl md:leading-normal text-gray-700 leading-normal font-bold">
                   Jelajahi{" "}
                   <span className="text-blue-500">
                     Perjalanan Kesehatan Mental

@@ -18,6 +18,7 @@ interface Project {
 }
 
 interface Blog {
+  id: number;
   image: string;
   title: string;
   desc: string;
@@ -127,41 +128,49 @@ export const project: Project[] = [
 
 export const blogData: Blog[] = [
   {
+    id: 1,
     image: "/images/blog/01_giglink.jpg",
     title: "Giglink: Tailwind CSS NFT Marketplace Template",
     desc: "The phrasal sequence of the is now so that many campaign and benefit",
   },
   {
+    id: 2,
     image: "/images/blog/01_techwind.jpg",
     title: "Techwind: Tailwind CSS Multipurpose Template",
     desc: "The phrasal sequence of the is now so that many campaign and benefit",
   },
   {
+    id: 3,
     image: "/images/blog/01_upwind.jpg",
     title: "Upwind: Tailwind CSS Landing Page Template",
     desc: "The phrasal sequence of the is now so that many campaign and benefit",
   },
   {
+    id: 4,
     image: "/images/blog/01_upwind.jpg",
     title: "Upwind: Tailwind CSS Landing Page Template",
     desc: "The phrasal sequence of the is now so that many campaign and benefit",
   },
   {
+    id: 5,
     image: "/images/blog/01_giglink.jpg",
     title: "Giglink: Tailwind CSS NFT Marketplace Template",
     desc: "The phrasal sequence of the is now so that many campaign and benefit",
   },
   {
+    id: 6,
     image: "/images/blog/01_techwind.jpg",
     title: "Techwind: Tailwind CSS Multipurpose Template",
     desc: "The phrasal sequence of the is now so that many campaign and benefit",
   },
   {
+    id: 7,
     image: "/images/blog/01_upwind.jpg",
     title: "Upwind: Tailwind CSS Landing Page Template",
     desc: "The phrasal sequence of the is now so that many campaign and benefit",
   },
   {
+    id: 8,
     image: "/",
     title: "Upwind: Tailwind CSS Landing Page Template",
     desc: "The phrasal sequence of the is now so that many campaign and benefit",

@@ -1,3 +1,4 @@
+// pages/artikel/index.tsx
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
@@ -5,6 +6,7 @@ import Image from "next/image";
 import { blogData } from "../../Data/data";
 
 type BlogItem = {
+  id: number; // Pastikan ID ada di sini
   image: string;
   title: string;
   desc: string;
@@ -74,10 +76,10 @@ export default function Blogs() {
           ref={containerRef}
           className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-[30px] mt-8 pb-4"
         >
-          {paginatedBlogs.map((item: BlogItem, index: number) => (
+          {paginatedBlogs.map((item: BlogItem) => (
             <Link
-              href={`/blog/${index}`}
-              key={index}
+              href={`/artikel/blog/${item.id}`} // Pastikan ID digunakan di URL
+              key={item.id}
               className="relative block rounded-lg overflow-hidden bg-white dark:bg-slate-900 shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl hover:border-2 hover:border-blue-500"
             >
               <Image

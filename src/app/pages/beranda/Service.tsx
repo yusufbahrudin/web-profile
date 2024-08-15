@@ -12,13 +12,12 @@ const Services: React.FC = () => {
     { name: "Screening Kesehatan Mental", value: "screening" },
   ];
 
-  // Mapping kategori ke image dan deskripsi yang sesuai
   const contentMap: { [key: string]: { image: string; description: string } } =
     {
       konseling: {
         image: "/images/hero/konseling.png",
         description:
-          "Layanan konseling umum kami menyediakan dukungan dan panduan untuk membantu Anda mengatasi berbagai tantangan dalam kehidupan sehari-hari.",
+          "1 dari 10 orang di Indonesia mengalami gangguan mental (Kemenkes). Masih banyak yang belum terdeteksi, sehingga jumlahnya dapat bertambah. Setiap orang memiliki kemungkinan mengalami masalah kesehatan mental, termasuk kamu. Screening kesehatan mental bersama kami dapat dilakukan secara online, kerahasiaan data terjamin, dan hasil cepat. Screening sedini mungkin sebelum risiko besar muncul.",
       },
       psikotest: {
         image: "/images/hero/psikotest.png",
@@ -28,17 +27,17 @@ const Services: React.FC = () => {
       psikoterapi: {
         image: "/images/hero/coomingsoon.png",
         description:
-          "Psikoterapi kami memberikan pendekatan terapeutik yang terarah untuk membantu Anda dalam proses pemulihan mental.",
+          "Hai! Kami sedang mempersiapkan sesuatu yang istimewa untuk Anda. Layanan terbaru kami akan segera hadir. Jangan lewatkan kesempatan untuk menjadi yang pertama menikmatinya. Stay tuned, ya!",
       },
       klinik: {
         image: "/images/hero/coomingsoon.png",
         description:
-          "Klinik tumbuh kembang kami berfokus pada dukungan perkembangan anak dengan pendekatan yang komprehensif dan holistik.",
+          "Hai! Kami sedang mempersiapkan sesuatu yang istimewa untuk Anda. Layanan terbaru kami akan segera hadir. Jangan lewatkan kesempatan untuk menjadi yang pertama menikmatinya. Stay tuned, ya!",
       },
       screening: {
         image: "/images/hero/screening.png",
         description:
-          "Layanan screening kesehatan mental kami membantu Anda untuk mengenali tanda-tanda awal gangguan mental dan memberikan langkah-langkah preventif.",
+          "1 dari 10 orang di Indonesia mengalami gangguan mental (Kemenkes). Masih banyak yang belum terdeteksi, sehingga jumlahnya dapat bertambah. Setiap orang memiliki kemungkinan mengalami masalah kesehatan mental, termasuk kamu. Screening kesehatan mental bersama kami dapat dilakukan secara online, kerahasiaan data terjamin, dan hasil cepat. Screening sedini mungkin sebelum risiko besar muncul.",
       },
     };
 
@@ -46,67 +45,62 @@ const Services: React.FC = () => {
 
   return (
     <section
-      className="relative md:py-24 py-16 bg-white rounded-t-2xl rounded-tr-2xl rounded-tl-2xl"
+      className="relative md:py-24 py-16 bg-white rounded-t-2xl"
       id="service"
     >
       <div className="container">
-        <div className="grid grid-cols-1 text-center">
-          <div className="pt-0">
-            <h3 className="mt-0 mb-6 md:text-2xl text-xl md:leading-normal leading-normal font-semibold">
-              Layanan Utama Kami
-            </h3>
-            <p className="text-slate-400 mb-6 max-w-xl mx-auto text-[15px]">
-              Temukan pengalaman baru dengan layanan kami yang menghadirkan
-              solusi terbaik untuk kebutuhan kesehatan mental anda.
-            </p>
-          </div>
+        <div className="text-center">
+          <h3 className="mt-0 mb-2 md:text-3xl text-2xl font-bold">
+            Layanan Utama Kami
+          </h3>
+          <p className="text-gray-500 mb-6 mx-auto text-[17px] mb-8">
+            Temukan pengalaman baru dengan layanan kami yang menghadirkan solusi
+            terbaik untuk kebutuhan kesehatan mental anda.
+          </p>
+        </div>
 
-          <div className="flex justify-center overflow-x-auto space-x-4 pb-4">
-            {filterCategories.map((category) => (
-              <button
-                key={category.value}
-                onClick={() => setSelectedCategory(category.value)}
-                className={`px-4 py-2 rounded-xl border ${
-                  selectedCategory === category.value
-                    ? "bg-blue-500 text-white border-blue-500"
-                    : "bg-blue-200 text-blue-700 border-blue-500"
+        <div className="flex justify-center overflow-x-auto space-x-4 pb-8">
+          {filterCategories.map((category) => (
+            <button
+              key={category.value}
+              onClick={() => setSelectedCategory(category.value)}
+              className={`px-4 py-2 rounded-xl border ${
+                selectedCategory === category.value
+                  ? "bg-blue-500 text-white border-blue-500"
+                  : "bg-blue-200 text-blue-700 border-blue-500"
+              }`}
+            >
+              {category.name}
+            </button>
+          ))}
+        </div>
+
+        {selectedContent && (
+          <div className="grid lg:grid-cols-12 items-center gap-8">
+            <div className="lg:col-span-8">
+              <p className="text-left text-lg leading-relaxed text-gray-700 pr-4">
+                {selectedContent.description}
+              </p>
+            </div>
+            <div className="lg:col-span-4">
+              <div
+                className={`relative ${
+                  selectedCategory === "screening"
+                    ? "w-[55vh] h-[45vh]"
+                    : "w-[45vh] h-[45vh]"
                 }`}
               >
-                {category.name}
-              </button>
-            ))}
-          </div>
-
-          <div className="container">
-            {selectedContent && (
-              <div className="grid lg:grid-cols-12 md:grid-cols-2 grid-cols-1 items-center gap-[30px]">
-                <div className="lg:col-span-7">
-                  <div className="mb-8 text-center lg:text-left">
-                    <h3 className="mb-6 md:text-2xl text-xl md:leading-normal text-gray-700 leading-normal font-semibold">
-                      {selectedContent.description}
-                    </h3>
-                  </div>
-                </div>
-                <div className="lg:col-span-5 lg:px-2">
-                  <div
-                    className={`relative ${
-                      selectedCategory === "screening"
-                        ? "w-[60vh] h-[40vh]"
-                        : "w-[50vh] h-[50vh]"
-                    }`}
-                  >
-                    <Image
-                      src={selectedContent.image}
-                      alt="About Image"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                </div>
+                <Image
+                  src={selectedContent.image}
+                  alt="Service Image"
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-lg"
+                />
               </div>
-            )}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );
