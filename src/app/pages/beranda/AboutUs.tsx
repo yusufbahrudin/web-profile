@@ -77,7 +77,7 @@ export default function AboutUs() {
                       key={index}
                     >
                       <div className="flex items-center mb-4">
-                        <div className="flex items-center justify-center h-12 w-12 bg-amber-500/10 group-hover:bg-amber-500 text-amber-500 group-hover:text-white rounded-full transition-colors duration-300 ease-in-out mr-4">
+                        <div className="flex items-center justify-center h-12 w-12 bg-blue-500/10 group-hover:bg-blue-500 text-blue-500 group-hover:text-white rounded-full transition-colors duration-300 ease-in-out mr-4">
                           <Icon size={24} />
                         </div>
                         <h4 className="text-lg font-semibold text-gray-800 dark:text-white">

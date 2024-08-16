@@ -42,8 +42,8 @@ const HeroOne: React.FC<HeroOneProps> = () => {
               <Image
                 src="/images/aplikasi/bg2.png"
                 alt="Hero Background"
-                layout="fill" // This ensures the image will fill the container
-                objectFit="cover" // Ensures the image covers the container
+                layout="fill"
+                objectFit="cover"
                 className="absolute top-0 left-0"
               />
             </div>

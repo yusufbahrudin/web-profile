@@ -17,7 +17,7 @@ const Services: React.FC = () => {
       konseling: {
         image: "/images/hero/konseling.png",
         description:
-          "1 dari 10 orang di Indonesia mengalami gangguan mental (Kemenkes). Masih banyak yang belum terdeteksi, sehingga jumlahnya dapat bertambah. Setiap orang memiliki kemungkinan mengalami masalah kesehatan mental, termasuk kamu. Screening kesehatan mental bersama kami dapat dilakukan secara online, kerahasiaan data terjamin, dan hasil cepat. Screening sedini mungkin sebelum risiko besar muncul.",
+          "Mau cerita tapi nggak ada teman yang bisa dipercaya? Nggak perlu khawatir lagi! Curahkan semua masalahmu dengan aman dan nyaman ke psikolog profesional kami. Prosesnya simpel banget, tinggal download aplikasinya di Playstore. Yuk, cerita sekarang biar hati lebih lega!",
       },
       psikotest: {
         image: "/images/hero/psikotest.png",
@@ -37,7 +37,7 @@ const Services: React.FC = () => {
       screening: {
         image: "/images/hero/screening.png",
         description:
-          "1 dari 10 orang di Indonesia mengalami gangguan mental (Kemenkes). Masih banyak yang belum terdeteksi, sehingga jumlahnya dapat bertambah. Setiap orang memiliki kemungkinan mengalami masalah kesehatan mental, termasuk kamu. Screening kesehatan mental bersama kami dapat dilakukan secara online, kerahasiaan data terjamin, dan hasil cepat. Screening sedini mungkin sebelum risiko besar muncul.",
+          "Tahukah kamu? 1 dari 10 orang di Indonesia mengalami gangguan mental (Kemenkes). Tapi, angka ini bisa lebih besar karena banyak yang belum terdeteksi. Siapa pun bisa mengalami masalah kesehatan mental, termasuk kamu. Jangan tunggu hingga terlambat! Lakukan screening kesehatan mentalmu sekarang bersama kami. Prosesnya cepat, dapat dilakukan secara online, dan data kamu dijamin aman. Mulailah dari sekarang untuk mencegah risiko yang lebih besar di kemudian hari.",
       },
     };
 
@@ -87,7 +87,7 @@ const Services: React.FC = () => {
                 className={`relative ${
                   selectedCategory === "screening"
                     ? "w-[60vh] h-[40vh]"
-                    : "w-[50vh] h-[50vh]"
+                    : "w-[45vh] h-[45vh]"
                 }`}
               >
                 <Image
