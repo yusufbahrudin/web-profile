@@ -44,7 +44,7 @@ export const expertiseData: ExpertiseItem[] = [
 export default function AboutUs() {
   return (
     <>
-      <section className="relative md:py-24 py-16" id="about-second">
+      <section className="relative md:py-24 py-16" id="home">
         <div className="container">
           <div className="grid lg:grid-cols-12 md:grid-cols-2 grid-cols-1 items-center gap-[30px]">
             <div className="lg:col-span-5 lg:px-2">

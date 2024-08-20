@@ -77,7 +77,7 @@ const Voucher: React.FC = () => {
   return (
     <section
       className="relative py-8 md:py-16 bg-white overflow-hidden"
-      id="voucher"
+      id="home"
     >
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
@@ -109,7 +109,7 @@ const Voucher: React.FC = () => {
                   key={item.id}
                   src={imageUrl}
                   alt={`Voucher ${item.id}`}
-                  className="flex-shrink-0 w-1/3 h-auto object-contain mx-2"
+                  className="flex-shrink-0 w-full md:w-1/3 h-auto object-contain mx-2"
                   style={{ scrollSnapAlign: "start" }}
                 />
               );

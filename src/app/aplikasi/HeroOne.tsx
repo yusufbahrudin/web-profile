@@ -7,7 +7,7 @@ interface HeroOneProps {}
 const HeroOne: React.FC<HeroOneProps> = () => {
   return (
     <>
-      <section className="relative pt-20 pb-20 z-10" id="aplikasi">
+      <section className="relative pt-5 pb-20 z-10" id="aplikasi">
         <div className="absolute inset-0" id="overlay"></div>
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 grid-cols-1 items-center gap-[30px]">
@@ -38,20 +38,20 @@ const HeroOne: React.FC<HeroOneProps> = () => {
                 </a>
               </div>
             </div>
-            <div className="relative w-full h-96">
+            <div className="relative w-[54rem] h-[36rem]">
               <Image
                 src="/images/aplikasi/bg2.png"
                 alt="Hero Background"
                 layout="fill"
                 objectFit="cover"
-                className="absolute top-0 left-0"
+                className="absolute top-0 -left-60"
               />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-blue-100 py-7 -mt-32">
+      <section className="bg-blue-100 py-9 -mt-32">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-3 grid-cols-1 gap-6">
             <div className="flex items-start space-x-4 text-left">

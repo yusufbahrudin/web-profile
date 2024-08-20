@@ -10,16 +10,14 @@ const HeroFive: React.FC<HeroFiveProps> = () => {
       <section className="relative pt-40 z-10" id="aplikasi">
         <div className="absolute inset-0 opacity-50" id="overlay"></div>
         <div className="container mx-auto text-center">
-          <div className="flex flex-col items-center justify-center h-full">
-            <div>
-              <h4 className="font-bold text-blue-500 text-3xl leading-normal mb-2">
-                Temukan Tempat yang Tepat untuk Berbicara dengan Nyaman <br />
-              </h4>
-              <p className="text-gray-500 text-md mb-6">
-                Pilih dari berbagai ruang yang dirancang khusus untuk memberikan
-                kenyamanan dan dukungan sesuai dengan kebutuhan pribadi Anda:
-              </p>
-            </div>
+          <div>
+            <h4 className="font-bold text-blue-500 text-3xl leading-normal mb-2">
+              Temukan Tempat yang Tepat untuk Berbicara dengan Nyaman <br />
+            </h4>
+            <p className="text-gray-500 text-md mb-6">
+              Pilih dari berbagai ruang yang dirancang khusus untuk memberikan
+              kenyamanan dan dukungan sesuai dengan kebutuhan pribadi Anda:
+            </p>
           </div>
         </div>
       </section>

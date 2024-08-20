@@ -57,14 +57,8 @@ const HeroOne: React.FC<HeroOneProps> = () => {
             </div>
           </div>
 
-          <div className="relative w-full h-96">
-            <Image
-              src="/images/beranda/bg.png"
-              alt="Hero Background"
-              layout="fill"
-              objectFit="cover"
-              className="absolute top-0 left-0"
-            />
+          <div className="relative">
+            <Image src="/images/hero/bg.png" alt="" width={600} height={10} />
           </div>
         </div>
       </div>

@@ -3,9 +3,9 @@
 import React, { useEffect } from "react";
 import dynamic from "next/dynamic";
 
-const Navbar = dynamic(() => import("../pages/Navbar"));
-const Footer = dynamic(() => import("../pages/Footer"));
-const Index = dynamic(() => import("../pages/artikel/index"));
+const Navbar = dynamic(() => import("../components/Navbar"));
+const Footer = dynamic(() => import("../components/Footer"));
+const Index = dynamic(() => import("./artikel"));
 
 export default function AplikasiPage() {
   useEffect(() => {
@@ -20,6 +20,7 @@ export default function AplikasiPage() {
       <Navbar />
       <Index />
       <Footer />
+      ßßß
     </>
   );
 }

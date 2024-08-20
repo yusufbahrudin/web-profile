@@ -46,7 +46,7 @@ const Services: React.FC = () => {
   return (
     <section
       className="relative md:py-24 py-16 bg-white rounded-t-2xl"
-      id="service"
+      id="home"
     >
       <div className="container">
         <div className="text-center">
@@ -76,13 +76,13 @@ const Services: React.FC = () => {
         </div>
 
         {selectedContent && (
-          <div className="grid lg:grid-cols-12 items-center gap-8">
+          <div className="grid lg:grid-cols-12 items-center">
             <div className="lg:col-span-8">
-              <p className="text-left text-lg leading-relaxed text-gray-700 pr-4">
+              <p className="text-justify text-lg leading-relaxed text-gray-700 max-w-2xl">
                 {selectedContent.description}
               </p>
             </div>
-            <div className="lg:col-span-4">
+            <div className="relative">
               <div
                 className={`relative ${
                   selectedCategory === "screening"
@@ -94,7 +94,7 @@ const Services: React.FC = () => {
                   src={selectedContent.image}
                   alt="Service Image"
                   fill
-                  objectFit="cover"
+                  style={{ objectFit: "cover" }}
                   className="rounded-lg"
                 />
               </div>

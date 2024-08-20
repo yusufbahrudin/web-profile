@@ -38,7 +38,7 @@ const Footer = () => {
               <h5 className="text-lg font-bold mb-4 mt-24">Tentang Kami</h5>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="/blog" className="hover:text-gray-400">
+                  <Link href="/artikel" className="hover:text-gray-400">
                     Blog
                   </Link>
                 </li>

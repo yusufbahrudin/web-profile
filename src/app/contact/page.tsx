@@ -3,9 +3,9 @@
 import React, { useEffect } from "react";
 import dynamic from "next/dynamic";
 
-const Navbar = dynamic(() => import("../pages/Navbar"));
-const Index = dynamic(() => import("../pages/contact/index"));
-const Footer = dynamic(() => import("../pages/Footer"));
+const Navbar = dynamic(() => import("../components/Navbar"));
+const Index = dynamic(() => import("./index"));
+const Footer = dynamic(() => import("../components/Footer"));
 
 export default function AplikasiPage() {
   useEffect(() => {

@@ -1,8 +1,8 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { blogData } from "../../Data/data";
+import { blogData } from "../Data/data";
 
 type BlogItem = {
   image: string;
@@ -11,37 +11,25 @@ type BlogItem = {
 };
 
 export default function Webinar() {
-  const [visibleItems, setVisibleItems] = useState<number>(3);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const itemsPerPage = 3;
-
-  const filteredBlogs = blogData;
-  const paginatedBlogs = filteredBlogs.slice(0, visibleItems);
-
-  const handleLoadMore = () => {
-    setVisibleItems((prevVisibleItems) => prevVisibleItems + itemsPerPage);
-  };
-
-  useEffect(() => {
-    if (containerRef.current) {
-      containerRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  }, [visibleItems]);
+  const filteredBlogs: BlogItem[] = blogData;
 
   return (
-    <section className="relative py-16" id="webinar">
+    <section className="relative md:py-24 py-16" id="home">
       <div className="container">
-        <div className="flex justify-between items-center mb-4">
-          <h3 className="text-xl md:text-4xl font-semibold text-gray-700">
+        <div className="flex justify-between items-center mb-8">
+          <h3 className="text-xl md:text-2xl font-semibold text-gray-700 pb-6">
             Webinar & Seminar
           </h3>
+          <Link
+            href="/webinar"
+            className="text-blue-500 hover:text-blue-700 font-medium transition-colors duration-300"
+          >
+            Lihat Semua
+          </Link>
         </div>
 
-        <div
-          ref={containerRef}
-          className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-[30px] mt-8 pb-4"
-        >
-          {paginatedBlogs.map((item: BlogItem, index: number) => (
+        <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-[30px] mt-8">
+          {filteredBlogs.slice(0, 2).map((item: BlogItem, index: number) => (
             <div
               key={index}
               className="relative block rounded-lg overflow-hidden bg-white dark:bg-slate-900 shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl hover:border-2 hover:border-blue-500"
@@ -71,17 +59,6 @@ export default function Webinar() {
             </div>
           ))}
         </div>
-
-        {filteredBlogs.length > visibleItems && (
-          <div className="flex justify-center mt-8">
-            <button
-              onClick={handleLoadMore}
-              className="px-6 py-2 bg-blue-500 text-white rounded-lg shadow-lg hover:bg-blue-600 transition-colors"
-            >
-              Selanjutnya
-            </button>
-          </div>
-        )}
       </div>
     </section>
   );

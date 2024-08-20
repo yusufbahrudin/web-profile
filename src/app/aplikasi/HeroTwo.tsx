@@ -33,7 +33,7 @@ export default function HeroTwo() {
             </p>
           </div>
 
-          <div className="lg:col-span-7 relative w-full h-[470px]">
+          <div className="lg:col-span-7 relative w-[520px] h-[420px]">
             <Image
               src="/images/aplikasi/bg3.png"
               alt="Background Image"
