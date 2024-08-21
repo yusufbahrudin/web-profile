@@ -24,7 +24,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <link rel="icon" href="/images/icon.png" />
       </head>
       <body
-        className={`${poppins.variable} font-poppins text-base text-black dark:text-white dark:bg-slate-900 `}
+        className={`${poppins.variable} font-sans text-base text-black dark:text-white dark:bg-slate-900`}
       >
         {children}
       </body>

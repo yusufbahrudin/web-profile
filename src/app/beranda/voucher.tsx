@@ -81,7 +81,7 @@ const Voucher: React.FC = () => {
     >
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-700 pb-4 md:pb-6">
+          <h2 className="text-lg sm:text-2xl lg:text-3xl font-bold text-gray-700 pb-4 md:pb-6">
             Nikmati Penawaran Menarik Dari Kami
           </h2>
         </div>

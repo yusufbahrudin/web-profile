@@ -1,8 +1,12 @@
-/* styles/globals.css */
-/* style.global.css */
-
-/* Tulis gaya tambahan Anda di sini */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.text-justify {
+  text-align: justify;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}

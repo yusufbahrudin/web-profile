@@ -56,14 +56,21 @@ export default function Navbar() {
             (section) => (
               <Link
                 key={section}
-                href={`/${section === "home" ? "" : section}`}
+                href={
+                  section === "about"
+                    ? "/about"
+                    : `/${section === "home" ? "" : section}`
+                }
                 className={`cursor-pointer transition duration-300 text-lg border-b-2 ${
                   activeSection === section
                     ? "text-blue-500 border-blue-500"
                     : "text-gray-600 border-transparent hover:text-blue-500"
                 }`}
               >
-                {section.charAt(0).toUpperCase() + section.slice(1)}
+                {section === "about"
+                  ? "Tentang Kami"
+                  : section.charAt(0).toUpperCase() +
+                    section.slice(1).replace("-", " ")}
               </Link>
             )
           )}
@@ -129,24 +136,44 @@ export default function Navbar() {
           transition: "width 0.3s ease, height 0.3s ease",
         }}
       >
-        <div className="flex flex-col mt-16 space-y-4">
-          {["home", "artikel", "webinar", "aplikasi", "about"].map(
-            (section) => (
-              <div key={section} className="flex">
-                <Link
-                  href={`/${section === "home" ? "" : section}`}
-                  className={`cursor-pointer transition duration-300 text-lg border-b-2 ${
-                    activeSection === section
-                      ? "text-blue-500 border-blue-500"
-                      : "text-gray-600 border-transparent hover:text-blue-500"
-                  }`}
-                  onClick={toggleMenu}
-                >
-                  {section.charAt(0).toUpperCase() + section.slice(1)}
-                </Link>
-              </div>
-            )
-          )}
+        <div
+          className={`lg:hidden fixed top-0 left-0 bg-white p-6 z-40 ${
+            isMenuOpen ? "w-full h-auto" : "w-0 h-0 overflow-hidden"
+          }`}
+          style={{
+            transition: "width 0.3s ease, height 0.3s ease",
+          }}
+        >
+          <div className="flex flex-col mt-16 space-y-4">
+            {["home", "artikel", "webinar", "aplikasi", "about"].map(
+              (section) => (
+                <div key={section} className="flex">
+                  <Link
+                    href={
+                      section === "about"
+                        ? "/about"
+                        : `/${section === "home" ? "" : section}`
+                    }
+                    className="cursor-pointer transition duration-300 text-lg"
+                    onClick={toggleMenu}
+                  >
+                    <span
+                      className={`border-b-2 ${
+                        activeSection === section
+                          ? "text-blue-500 border-blue-500"
+                          : "text-gray-600 border-transparent hover:text-blue-500"
+                      }`}
+                    >
+                      {section === "about"
+                        ? "Tentang Kami"
+                        : section.charAt(0).toUpperCase() +
+                          section.slice(1).replace("-", " ")}
+                    </span>
+                  </Link>
+                </div>
+              )
+            )}
+          </div>
         </div>
       </div>
     </nav>

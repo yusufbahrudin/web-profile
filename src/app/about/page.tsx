@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 
 const Navbar = dynamic(() => import("../components/Navbar"));
 const Footer = dynamic(() => import("../components/Footer"));
-const Index = dynamic(() => import("./artikel"));
+const Index = dynamic(() => import("./index"));
 
 export default function AplikasiPage() {
   useEffect(() => {

@@ -44,11 +44,15 @@ export const expertiseData: ExpertiseItem[] = [
 export default function AboutUs() {
   return (
     <>
-      <section className="relative md:py-24 py-16" id="home">
-        <div className="container">
-          <div className="grid lg:grid-cols-12 md:grid-cols-2 grid-cols-1 items-center gap-[30px]">
-            <div className="lg:col-span-5 lg:px-2">
-              <div className="relative w-full h-[50vh]">
+      <section
+        className="relative md:py-24 py-16 px-4 md:px-16 lg:px-20"
+        id="home"
+      >
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-[30px] items-center">
+            {/* Gambar */}
+            <div className="order-2 md:order-1">
+              <div className="relative w-full h-80 md:h-[50vh] lg:h-[55vh]">
                 <Image
                   src="/images/hero/aboout.png"
                   alt="About Image"
@@ -57,9 +61,10 @@ export default function AboutUs() {
                 />
               </div>
             </div>
-            <div className="lg:col-span-7">
-              <div className="mb-8 text-center lg:text-left">
-                <h3 className="mb-6 md:text-2xl text-xl md:leading-normal text-gray-700 leading-normal font-bold">
+            {/* Teks */}
+            <div className="order-1 md:order-2">
+              <div className="mb-8 text-center md:text-left">
+                <h3 className="mb-6 md:text-2xl text-md md:leading-normal text-gray-700 leading-normal font-bold">
                   Jelajahi{" "}
                   <span className="text-blue-500">
                     Perjalanan Kesehatan Mental
@@ -68,12 +73,13 @@ export default function AboutUs() {
                   <span className="text-blue-500"> DeepTalk</span>
                 </h3>
               </div>
-              <div className="grid grid-cols-2 gap-6">
+              {/* Scroll Horizontal untuk Mobile */}
+              <div className="hidden md:flex flex-wrap gap-6">
                 {expertiseData.map((item: ExpertiseItem, index: number) => {
                   const Icon = item.Icon;
                   return (
                     <div
-                      className="group p-6 bg-white dark:bg-slate-900 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out"
+                      className="flex-shrink-0 w-60 p-6 bg-white dark:bg-slate-900 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out"
                       key={index}
                     >
                       <div className="flex items-center mb-4">
@@ -85,13 +91,40 @@ export default function AboutUs() {
                         </h4>
                       </div>
                       <div className="border-t border-gray-300 dark:border-gray-600 pt-2 mt-2">
-                        <p className="text-gray-500 dark:text-gray-400">
+                        <p className="text-gray-500 dark:text-gray-400 text-sm md:text-base">
                           {item.description}
                         </p>
                       </div>
                     </div>
                   );
                 })}
+              </div>
+              <div className="md:hidden overflow-x-auto">
+                <div className="flex space-x-4">
+                  {expertiseData.map((item: ExpertiseItem, index: number) => {
+                    const Icon = item.Icon;
+                    return (
+                      <div
+                        className="flex-shrink-0 w-60 p-4 bg-white dark:bg-slate-900 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out"
+                        key={index}
+                      >
+                        <div className="flex items-center mb-4">
+                          <div className="flex items-center justify-center h-10 w-10 bg-blue-500/10 group-hover:bg-blue-500 text-blue-500 group-hover:text-white rounded-full transition-colors duration-300 ease-in-out mr-3">
+                            <Icon size={20} />
+                          </div>
+                          <h4 className="text-sm font-semibold text-gray-800 dark:text-white">
+                            {item.title}
+                          </h4>
+                        </div>
+                        <div className="border-t border-gray-300 dark:border-gray-600 pt-2 mt-2">
+                          <p className="text-xs text-gray-500 dark:text-gray-400">
+                            {item.description}
+                          </p>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>

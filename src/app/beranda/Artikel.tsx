@@ -1,4 +1,3 @@
-// pages/artikel.tsx
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Link from "next/link";
@@ -14,7 +13,7 @@ interface BlogItem {
   title: string;
   image: string;
   diskripsi: string;
-  categories: BlogCategory[]; // Pastikan ini array dari BlogCategory
+  categories: BlogCategory[];
 }
 
 const Artikel: React.FC = () => {
@@ -70,26 +69,26 @@ const Artikel: React.FC = () => {
         );
 
   return (
-    <section className="relative md:py-24 py-16" id="artikel">
-      <div className="container">
-        <div className="flex justify-between items-center mb-8">
-          <h3 className="text-xl md:text-2xl font-semibold text-gray-700">
+    <section className="relative md:py-24 py-16" id="home">
+      <div className="container px-4 md:px-8 lg:px-60 mx-auto">
+        <div className="flex items-center justify-between mb-8">
+          <h3 className="text-md md:text-2xl font-semibold text-gray-700">
             Baca 100+ Artikel Baru
           </h3>
           <Link
             href="/artikel"
-            className="text-blue-500 hover:text-blue-700 font-medium transition-colors duration-300"
+            className="text-blue-500 hover:text-blue-700 text-xs md:text-lg transition-colors duration-300"
           >
             Lihat Semua
           </Link>
         </div>
 
-        <div className="flex justify-center overflow-x-auto space-x-4 pb-4">
+        <div className="flex justify-start sm:justify-center overflow-x-auto sm:overflow-x-hidden space-x-2 sm:space-x-4 pb-4 scrollbar-hide">
           {filterCategories.map((category) => (
             <button
               key={category.value}
               onClick={() => setSelectedCategory(category.value)}
-              className={`px-4 py-2 rounded-xl border ${
+              className={`px-2 py-1 sm:px-4 sm:py-2 text-xs sm:text-lg rounded-xl border ${
                 selectedCategory === category.value
                   ? "bg-blue-500 text-white border-blue-500"
                   : "bg-blue-200 text-blue-700 border-blue-500"
@@ -100,16 +99,17 @@ const Artikel: React.FC = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-[15px] mt-8">
+        <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-4 overflow-x-auto sm:overflow-x-hidden space-x-4 sm:space-x-0 pb-4 scrollbar-hide mt-8">
           {filteredBlogs.slice(0, 4).map((item) => (
-            <Card
-              key={item.id}
-              id={item.id}
-              title={item.title}
-              image={item.image}
-              categories={item.categories} // Pastikan ini sesuai dengan tipe CardProps
-              description={item.diskripsi}
-            />
+            <div key={item.id} className="min-w-[250px] sm:min-w-0">
+              <Card
+                id={item.id}
+                title={item.title}
+                image={item.image}
+                categories={item.categories}
+                description={item.diskripsi}
+              />
+            </div>
           ))}
         </div>
       </div>

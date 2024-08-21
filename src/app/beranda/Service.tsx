@@ -22,7 +22,7 @@ const Services: React.FC = () => {
       psikotest: {
         image: "/images/hero/psikotest.png",
         description:
-          "Layanan asesmen kami menawarkan evaluasi yang mendalam untuk memahami kondisi kesehatan mental Anda secara komprehensif.",
+          "Layanan psikotest kami menawarkan evaluasi yang mendalam untuk memahami kondisi kesehatan mental Anda secara komprehensif.",
       },
       psikoterapi: {
         image: "/images/hero/coomingsoon.png",
@@ -45,49 +45,55 @@ const Services: React.FC = () => {
 
   return (
     <section
-      className="relative md:py-24 py-16 bg-white rounded-t-2xl"
+      className="relative bg-white rounded-t-2xl py-16 md:py-24"
       id="home"
     >
-      <div className="container">
+      <div className="container px-4 md:px-60 lg:px-60 xl:px-60">
         <div className="text-center">
-          <h3 className="mt-0 mb-6 md:text-3xl text-2xl font-semibold">
+          <h3 className="mt-0 mb-6 text-md font-semibold md:text-3xl">
             Layanan Utama Kami
           </h3>
-          <p className="text-slate-400 mb-6 max-w-xl mx-auto text-[15px]">
+          <p className="text-slate-400 mb-6 text-xs md:text-lg max-w-full mx-auto text-center">
             Temukan pengalaman baru dengan layanan kami yang menghadirkan solusi
             terbaik untuk kebutuhan kesehatan mental anda.
           </p>
         </div>
 
-        <div className="flex justify-center overflow-x-auto space-x-4 pb-8">
-          {filterCategories.map((category) => (
-            <button
-              key={category.value}
-              onClick={() => setSelectedCategory(category.value)}
-              className={`px-4 py-2 rounded-xl border ${
-                selectedCategory === category.value
-                  ? "bg-blue-500 text-white border-blue-500"
-                  : "bg-blue-200 text-blue-700 border-blue-500"
-              }`}
-            >
-              {category.name}
-            </button>
-          ))}
+        <div className="relative pb-8">
+          <div className="flex justify-start space-x-2 md:space-x-4 overflow-x-auto scroll-smooth">
+            {filterCategories.map((category) => (
+              <button
+                key={category.value}
+                onClick={() => setSelectedCategory(category.value)}
+                className={`px-2 py-1 text-xs md:px-4 md:py-2 md:text-lg rounded-xl border ${
+                  selectedCategory === category.value
+                    ? "bg-blue-500 text-white border-blue-500"
+                    : "bg-blue-200 text-blue-700 border-blue-500"
+                }`}
+              >
+                {category.name}
+              </button>
+            ))}
+          </div>
         </div>
 
         {selectedContent && (
-          <div className="grid lg:grid-cols-12 items-center">
-            <div className="lg:col-span-8">
-              <p className="text-justify text-lg leading-relaxed text-gray-700 max-w-2xl">
-                {selectedContent.description}
-              </p>
+          <div className="flex flex-col lg:flex-row gap-8 items-center justify-center">
+            {/* Deskripsi */}
+            <div className="flex-1 flex justify-center lg:items-center">
+              <div className="w-full max-w-md lg:max-w-lg">
+                <p className="text-center text-xs md:text-lg leading-relaxed text-gray-700 text-justify">
+                  {selectedContent.description}
+                </p>
+              </div>
             </div>
-            <div className="relative">
+
+            <div className="relative flex-1 flex justify-center lg:items-center">
               <div
                 className={`relative ${
                   selectedCategory === "screening"
-                    ? "w-[60vh] h-[40vh]"
-                    : "w-[45vh] h-[45vh]"
+                    ? "w-64 h-64 md:w-[60vh] md:h-[40vh]"
+                    : "w-64 h-64 md:w-[45vh] md:h-[45vh]"
                 }`}
               >
                 <Image
