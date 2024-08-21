@@ -64,7 +64,7 @@ export default function Webinar() {
                 </p>
                 <Link
                   href={`/blog/${index}`}
-                  className="mt-auto inline-block px-1 sm:px-4 py-1 sm:py-3 bg-blue-500 text-white rounded-lg text-xs sm:text-sm hover:bg-blue-600 transition-colors duration-300 w-full text-center"
+                  className="mt-auto inline-block px-1 sm:px-4 py- sm:py-3 bg-blue-500 text-white rounded-lg text-xs sm:text-sm hover:bg-blue-600 transition-colors duration-300 w-full text-center"
                 >
                   Ikuti Sekarang
                 </Link>

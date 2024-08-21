@@ -183,9 +183,9 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="bg-blue-500 py-4">
+      <div className="bg-blue-500 py-2 sm:py-4">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-sm text-white">
+          <p className="text-xs sm:text-sm md:text-base text-white">
             © {new Date().getFullYear()} DeepTalk, ALL RIGHTS RESERVED
           </p>
         </div>

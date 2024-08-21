@@ -1,3 +1,4 @@
+// /artikel/artikel.tsx
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
@@ -12,7 +13,7 @@ type BlogItem = {
   category: string;
 };
 
-export default function Blogs() {
+export default function Artikel() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [visibleItems, setVisibleItems] = useState<number>(4);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -68,14 +69,13 @@ export default function Blogs() {
           ))}
         </div>
 
-        {/* Desktop view */}
         <div
           ref={containerRef}
           className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mt-4 sm:mt-6 md:mt-8 pb-4"
         >
           {paginatedBlogs.map((item: BlogItem) => (
             <Link
-              href="/"
+              href={`/artikel/${item.id}`} // Updated link to include article ID
               key={item.id}
               className="relative block rounded-lg overflow-hidden bg-white dark:bg-slate-900 shadow-md transition-transform transform hover:scale-105 hover:shadow-lg hover:border-2 hover:border-blue-500"
             >
@@ -99,14 +99,13 @@ export default function Blogs() {
           ))}
         </div>
 
-        {/* Mobile view */}
         <div
           ref={containerRef}
           className="md:hidden flex flex-col gap-2 mt-4 sm:mt-6 md:mt-8 pb-4"
         >
           {paginatedBlogs.map((item: BlogItem) => (
             <Link
-              href="/"
+              href={`/artikel/${item.id}`} // Updated link to include article ID
               key={item.id}
               className="relative flex items-start bg-white dark:bg-slate-900 rounded-lg overflow-hidden shadow-md transition-transform transform hover:scale-105 hover:shadow-lg hover:border-2 hover:border-blue-500"
             >

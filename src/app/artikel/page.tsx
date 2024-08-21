@@ -2,6 +2,7 @@
 
 import React, { useEffect } from "react";
 import dynamic from "next/dynamic";
+import Head from "next/head";
 
 const Navbar = dynamic(() => import("../components/Navbar"));
 const Footer = dynamic(() => import("../components/Footer"));
@@ -17,6 +18,13 @@ export default function AplikasiPage() {
 
   return (
     <>
+      <Head>
+        <title>Artikel - Aplikasi</title>
+        <meta
+          name="description"
+          content="Explore the latest articles on various topics."
+        />
+      </Head>
       <Navbar />
       <Index />
       <Footer />

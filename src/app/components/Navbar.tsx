@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState<string>("home");
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const menuRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,6 +31,19 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
@@ -129,6 +143,7 @@ export default function Navbar() {
 
       {/* Menu dropdown untuk mobile */}
       <div
+        ref={menuRef}
         className={`lg:hidden fixed top-0 left-0 bg-white p-6 z-40 ${
           isMenuOpen ? "w-full h-auto" : "w-0 h-0 overflow-hidden"
         }`}
@@ -136,44 +151,35 @@ export default function Navbar() {
           transition: "width 0.3s ease, height 0.3s ease",
         }}
       >
-        <div
-          className={`lg:hidden fixed top-0 left-0 bg-white p-6 z-40 ${
-            isMenuOpen ? "w-full h-auto" : "w-0 h-0 overflow-hidden"
-          }`}
-          style={{
-            transition: "width 0.3s ease, height 0.3s ease",
-          }}
-        >
-          <div className="flex flex-col mt-16 space-y-4">
-            {["home", "artikel", "webinar", "aplikasi", "about"].map(
-              (section) => (
-                <div key={section} className="flex">
-                  <Link
-                    href={
-                      section === "about"
-                        ? "/about"
-                        : `/${section === "home" ? "" : section}`
-                    }
-                    className="cursor-pointer transition duration-300 text-lg"
-                    onClick={toggleMenu}
+        <div className="flex flex-col mt-16 space-y-4">
+          {["home", "artikel", "webinar", "aplikasi", "about"].map(
+            (section) => (
+              <div key={section} className="flex">
+                <Link
+                  href={
+                    section === "about"
+                      ? "/about"
+                      : `/${section === "home" ? "" : section}`
+                  }
+                  className="cursor-pointer transition duration-300 text-lg"
+                  onClick={toggleMenu}
+                >
+                  <span
+                    className={`border-b-2 ${
+                      activeSection === section
+                        ? "text-blue-500 border-blue-500"
+                        : "text-gray-600 border-transparent hover:text-blue-500"
+                    }`}
                   >
-                    <span
-                      className={`border-b-2 ${
-                        activeSection === section
-                          ? "text-blue-500 border-blue-500"
-                          : "text-gray-600 border-transparent hover:text-blue-500"
-                      }`}
-                    >
-                      {section === "about"
-                        ? "Tentang Kami"
-                        : section.charAt(0).toUpperCase() +
-                          section.slice(1).replace("-", " ")}
-                    </span>
-                  </Link>
-                </div>
-              )
-            )}
-          </div>
+                    {section === "about"
+                      ? "Tentang Kami"
+                      : section.charAt(0).toUpperCase() +
+                        section.slice(1).replace("-", " ")}
+                  </span>
+                </Link>
+              </div>
+            )
+          )}
         </div>
       </div>
     </nav>
