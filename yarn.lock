@@ -1784,6 +1784,11 @@
   dependencies:
     "@hapi/hoek" "^8.3.0"
 
+"@heroicons/react@^2.1.5":
+  version "2.1.5"
+  resolved "https://registry.npmjs.org/@heroicons/react/-/react-2.1.5.tgz"
+  integrity sha512-FuzFN+BsHa+7OxbvAERtgBTNeZpUjgM/MIizfVkSCL2/edriN0Hx/DWRCR//aPYwO5QX/YlgLGXk+E3PcfZwjA==
+
 "@iconscout/react-unicons@^2.0.2":
   version "2.0.2"
   resolved "https://registry.npmjs.org/@iconscout/react-unicons/-/react-unicons-2.0.2.tgz"

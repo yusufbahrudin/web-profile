@@ -60,7 +60,8 @@ const Services: React.FC = () => {
         </div>
 
         <div className="relative pb-8">
-          <div className="flex justify-start space-x-2 md:space-x-4 overflow-x-auto scroll-smooth">
+          {/* Flexbox layout for mobile view */}
+          <div className="flex flex-wrap justify-center gap-2">
             {filterCategories.map((category) => (
               <button
                 key={category.value}

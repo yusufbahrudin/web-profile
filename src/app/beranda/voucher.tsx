@@ -1,5 +1,8 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 interface VoucherData {
   id: number;
@@ -21,11 +24,51 @@ interface VoucherData {
   code: string;
 }
 
+// const CustomArrow = ({ onClick, direction }: any) => {
+//   return (
+//     <button
+//       onClick={onClick}
+//       className={`absolute top-1/2 transform -translate-y-1/2 z-10 p-1 md:p-2 rounded-full bg-white text-black shadow-lg hover:bg-blue-500 transition-all
+//       md:w-10 md:h-10 w-8 h-8
+//       ${direction === "left" ? "left-2 md:left-4" : "right-2 md:right-4"}`}
+//     >
+//       {direction === "left" ? (
+//         <svg
+//           xmlns="http://www.w3.org/2000/svg"
+//           fill="none"
+//           viewBox="0 0 24 24"
+//           stroke="currentColor"
+//           className="w-4 h-4 md:w-6 md:h-6 mx-auto"
+//         >
+//           <path
+//             strokeLinecap="round"
+//             strokeLinejoin="round"
+//             strokeWidth={2}
+//             d="M15 19l-7-7 7-7"
+//           />
+//         </svg>
+//       ) : (
+//         <svg
+//           xmlns="http://www.w3.org/2000/svg"
+//           fill="none"
+//           viewBox="0 0 24 24"
+//           stroke="currentColor"
+//           className="w-4 h-4 md:w-6 md:h-6 mx-auto"
+//         >
+//           <path
+//             strokeLinecap="round"
+//             strokeLinejoin="round"
+//             strokeWidth={2}
+//             d="M9 5l7 7-7 7"
+//           />
+//         </svg>
+//       )}
+//     </button>
+//   );
+// };
+
 const Voucher: React.FC = () => {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [currentPage, setCurrentPage] = useState<number>(0);
   const [vouchers, setVouchers] = useState<VoucherData[]>([]);
-  const itemsPerPage = 3;
 
   useEffect(() => {
     const fetchVouchers = async () => {
@@ -47,32 +90,26 @@ const Voucher: React.FC = () => {
     fetchVouchers();
   }, []);
 
-  const totalPages = Math.ceil(vouchers.length / itemsPerPage);
-
-  const scrollToPage = (page: number) => {
-    if (scrollContainerRef.current) {
-      const containerWidth = scrollContainerRef.current.clientWidth;
-      const itemWidth = containerWidth / itemsPerPage;
-      scrollContainerRef.current.scrollTo({
-        left: itemWidth * page,
-        behavior: "smooth",
-      });
-    }
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    // nextArrow: <CustomArrow direction="right" />,
+    // prevArrow: <CustomArrow direction="left" />,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
-
-  useEffect(() => {
-    scrollToPage(currentPage);
-
-    const interval = setInterval(() => {
-      setCurrentPage((prevPage) => {
-        const nextPage = (prevPage + 1) % totalPages;
-        scrollToPage(nextPage);
-        return nextPage;
-      });
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [currentPage, totalPages]);
 
   return (
     <section
@@ -85,58 +122,21 @@ const Voucher: React.FC = () => {
             Nikmati Penawaran Menarik Dari Kami
           </h2>
         </div>
-        <div className="relative flex items-center justify-center">
-          <button
-            className="absolute left-0 z-10 p-2 bg-gray-800 text-white rounded-full hidden md:block"
-            onClick={() =>
-              setCurrentPage(
-                (prevPage) => (prevPage - 1 + totalPages) % totalPages
-              )
-            }
-          >
-            &lt;
-          </button>
-          <div
-            className="flex overflow-x-auto scrollbar-hide"
-            ref={scrollContainerRef}
-            style={{ scrollSnapType: "x mandatory" }}
-          >
+        <div className="relative">
+          <Slider {...settings}>
             {vouchers.map((item) => {
               const imageUrl = item.image || "/default-image.jpg";
-              console.log("Image URL:", imageUrl);
               return (
-                <img
-                  key={item.id}
-                  src={imageUrl}
-                  alt={`Voucher ${item.id}`}
-                  className="flex-shrink-0 w-full md:w-1/3 h-auto object-contain mx-2"
-                  style={{ scrollSnapAlign: "start" }}
-                />
+                <div key={item.id} className="px-2">
+                  <img
+                    src={imageUrl}
+                    alt={`Voucher ${item.id}`}
+                    className="w-full h-auto object-contain rounded-lg shadow-lg"
+                  />
+                </div>
               );
             })}
-          </div>
-          <button
-            className="absolute right-0 z-10 p-2 bg-gray-800 text-white rounded-full hidden md:block"
-            onClick={() =>
-              setCurrentPage((prevPage) => (prevPage + 1) % totalPages)
-            }
-          >
-            &gt;
-          </button>
-        </div>
-        <div className="flex justify-center mt-4">
-          {Array.from({ length: totalPages }).map((_, index) => (
-            <button
-              key={index}
-              className={`w-4 h-4 mx-1 rounded-full focus:outline-none ${
-                index === currentPage ? "bg-gray-800" : "bg-gray-400"
-              }`}
-              onClick={() => {
-                setCurrentPage(index);
-                scrollToPage(index);
-              }}
-            ></button>
-          ))}
+          </Slider>
         </div>
       </div>
     </section>
