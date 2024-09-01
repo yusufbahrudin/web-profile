@@ -42,20 +42,14 @@ const About: React.FC = () => {
           <div className="md:w-1/2">
             <p className="text-sm md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed text-justify font-sans">
               Kami muncul dari keinginan untuk membuat jutaan orang mempunyai
-              kesehatan mental yang baik dan sejahtera. Kami paham Indonesia
-              merupakan negara yang luas. Masih banyak orang yang memerlukan
-              bantuan penanganan kesehatan mental tetapi mereka tidak memiliki
-              aksesnya. DeepTalk hadir sebagai aplikasi kesehatan mental di
-              Indonesia yang membantu menjembatani antara orang yang memiliki
-              masalah kesehatan mental dan Psikolog agar bisa terhubung dekat.
-              Kami percaya setiap orang memiliki hak untuk meraih kehidupan yang
-              lebih baik dari mental yang sejahtera. Yang membuat kami peduli 1
-              dari 10 orang di Indonesia mengalami gangguan mental (Kemenkes).
-              Angka tersebut bisa jadi lebih besar karena banyaknya orang yang
-              belum terdeteksi. Artinya jumlah yang memerlukan bantuan jauh
-              lebih banyak. DeepTalk berkomitmen untuk bantu penderita penyakit
-              kesehatan mental mendapatkan kehidupan yang lebih baik. Kami
-              berdedikasi untuk menyediakan platform yang memudahkan akses
+              kesehatan mental yang baik dan sejahtera. DeepTalk hadir sebagai
+              aplikasi kesehatan mental di Indonesia yang membantu menjembatani
+              antara orang yang memiliki masalah kesehatan mental dan Psikolog
+              agar bisa terhubung dekat. Kami percaya setiap orang memiliki hak
+              untuk meraih kehidupan yang lebih baik dari mental yang sejahtera.
+            </p>
+            <p className="mt-4 text-sm md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed text-justify font-sans">
+              Kami berdedikasi untuk menyediakan platform yang memudahkan akses
               kepada layanan kesehatan mental berkualitas. Dengan dukungan dan
               inovasi, kami berkomitmen untuk menjadi bagian dari solusi
               terhadap tantangan kesehatan mental di Indonesia.
@@ -300,12 +294,10 @@ const About: React.FC = () => {
 
           <div className="md:w-1/2">
             <p className="text-gray-700 dark:text-gray-300 text-sm md:text-lg leading-relaxed text-justify font-sans">
-              Aplikasi DeepTalk lebih dari aplikasi konseling. Kami menghimpun
-              jadwal webinar tentang kesehatan mental yang diisi pemateri
-              berkualitas agar kamu juga bisa mendapatkan edukasi kesehatan
-              mental. Teknologi Kami mengembangkan AI sebagai asisten bantuan
-              dan dukungan. Kamu bisa akses 24 jam bantuan bila menemui kendala
-              atau kebingungan.
+              Teknologi Kami mengembangkan AI sebagai asisten bantuan dan
+              dukungan. Kamu bisa akses 24 jam bantuan bila menemui kendala atau
+              kebingungan". Diubah jadi "Kami mengembangkan teknologi AI sebagai
+              asisten bantuan dan dukungan agar bisa melayani kamu 24 jam.
             </p>
           </div>
         </div>

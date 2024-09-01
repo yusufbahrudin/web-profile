@@ -568,9 +568,6 @@ video {
     padding-left: 13rem;
   }
 }
-.static{
-  position: static !important;
-}
 .fixed{
   position: fixed !important;
 }

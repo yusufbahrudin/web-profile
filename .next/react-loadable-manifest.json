@@ -17,6 +17,48 @@
       "static/chunks/_app-pages-browser_src_app_about_index_tsx.js"
     ]
   },
+  "app/aplikasi/page.tsx -> ../components/Footer": {
+    "id": "app/aplikasi/page.tsx -> ../components/Footer",
+    "files": [
+      "static/chunks/_app-pages-browser_src_app_components_Footer_tsx.js"
+    ]
+  },
+  "app/aplikasi/page.tsx -> ../components/Navbar": {
+    "id": "app/aplikasi/page.tsx -> ../components/Navbar",
+    "files": [
+      "static/chunks/_app-pages-browser_src_app_components_Navbar_tsx.js"
+    ]
+  },
+  "app/aplikasi/page.tsx -> ./HeroFive": {
+    "id": "app/aplikasi/page.tsx -> ./HeroFive",
+    "files": [
+      "static/chunks/_app-pages-browser_src_app_aplikasi_HeroFive_tsx.js"
+    ]
+  },
+  "app/aplikasi/page.tsx -> ./HeroFour": {
+    "id": "app/aplikasi/page.tsx -> ./HeroFour",
+    "files": [
+      "static/chunks/_app-pages-browser_src_app_aplikasi_HeroFour_tsx.js"
+    ]
+  },
+  "app/aplikasi/page.tsx -> ./HeroOne": {
+    "id": "app/aplikasi/page.tsx -> ./HeroOne",
+    "files": [
+      "static/chunks/_app-pages-browser_src_app_aplikasi_HeroOne_tsx.js"
+    ]
+  },
+  "app/aplikasi/page.tsx -> ./HeroThree": {
+    "id": "app/aplikasi/page.tsx -> ./HeroThree",
+    "files": [
+      "static/chunks/_app-pages-browser_src_app_aplikasi_HeroThree_tsx.js"
+    ]
+  },
+  "app/aplikasi/page.tsx -> ./HeroTwo": {
+    "id": "app/aplikasi/page.tsx -> ./HeroTwo",
+    "files": [
+      "static/chunks/_app-pages-browser_src_app_aplikasi_HeroTwo_tsx.js"
+    ]
+  },
   "app/artikel/page.tsx -> ../components/Footer": {
     "id": "app/artikel/page.tsx -> ../components/Footer",
     "files": [
